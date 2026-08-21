@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Responsive rules for the whole site (inner pages + homepage).
+   Breakpoints match Bootstrap's lg (992px) / md (768px) / sm (576px) used
+   elsewhere in this project, and the ScrollTrigger.matchMedia() buckets in
+   theme.js.
+
+   NOTE: this file is linked at the very end of <head> in header.php, AFTER
+   the inline <style> block, on purpose — same-specificity CSS resolves by
+   source order, so loading it last is what makes every override below
+   actually win instead of being silently beaten by the unconditional rules
+   further up the page.
+   ========================================================================== */
+
+/* Global safety net: nothing should ever force horizontal scroll */
+html,
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Tablet and below (<= 991.98px)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-cursor-img,
+  .services-cursor-badge {
+    display: none !important;
+  }
+
+  /* Header */
+  .header {
+    top: var(--space-24);
+  }
+
+  .site-logo a {
+    width: 65%;
+  }
+
+  /* Brand section (CodeWave) — the 350px hero type is desktop-only */
+  .brand {
+    height: auto;
+    padding-block: var(--space-96) var(--space-140);
+  }
+
+  .brand-name.top {
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: var(--fs-140);
+    letter-spacing: -8px;
+    display: block;
+    text-align: right;
+  }
+
+  .brand-name.bottom {
+    position: relative;
+    left: 0;
+    margin-top: var(--space-32);
+  }
+
+  .brand-name.bottom img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Homepage service panels (services-loop) — fixed card height doesn't
+     survive stacked columns, let it size to its own content */
+  .services-card {
+    height: auto;
+    min-height: 220px;
+    margin-bottom: var(--space-24);
+  }
+
+  .services-card.right {
+    padding-left: 0;
+  }
+
+  /* Featured Work / Portfolio masonry offsets only make sense in the 3-up
+     desktop layout — cancel them as soon as the grid drops to 2-up or 1-up
+     or cards start overlapping */
+  .work .row.cust-gap .col-lg-4:nth-child(5),
+  .work .row.cust-gap .col-lg-4:nth-child(6) {
+    margin-top: 0;
+  }
+
+  /* Footer */
+  .footer .site-logo p.web-color {
+    margin-right: 0;
+  }
+
+  .footer-bottom ul {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================================================
+   Mobile (<= 767.98px)
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .header.is-pinned {
+    padding-block: var(--space-8);
+  }
+
+  .site-logo a {
+    width: 75%;
+  }
+
+  .brand-name.top {
+    right: -80px;
+    font-size: var(--fs-96);
+    letter-spacing: -6px;
+  }
+
+  /* Prevent any horizontal scroll from the brand parallax on small screens */
+  .brand {
+    overflow: hidden;
+  }
+
+  .drag-item {
+    overflow: hidden;
+  }
+
+  .drag-item span {
+    font-size: var(--fs-14);
+    padding: var(--space-8) var(--space-16);
+  }
+
+  /* Page banners on inner pages */
+  .page-banner {
+    padding-block: var(--space-140) var(--space-56);
+  }
+
+  .breadcrumb-trail {
+    font-size: var(--fs-14);
+    flex-wrap: wrap;
+  }
+
+  /* Homepage service panels */
+  .service-panel {
+    min-height: auto;
+    padding-block: var(--space-96) var(--space-56);
+  }
+
+  .service-panel .slides-wrapper .row {
+    row-gap: var(--space-24);
+  }
+
+  /* Stat / value / process grids on About and service pages */
+  .stat-item,
+  .value-card,
+  .process-step,
+  .feature-row {
+    margin-bottom: var(--space-24);
+  }
+
+  /* Pricing cards stack with consistent spacing */
+  .pricing-card {
+    margin-bottom: var(--space-24);
+  }
+
+  .pricing-card.featured {
+    order: -1;
+  }
+
+  /* Contact page */
+  .contact-form,
+  .contact-info-card {
+    margin-bottom: var(--space-24);
+  }
+
+  /* Legal pages (Privacy / Terms) */
+  .legal-content h2.web-title {
+    font-size: var(--fs-28);
+    margin-top: var(--space-32);
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    margin-bottom: var(--space-24);
+  }
+
+  /* FAQ accordion */
+  .accordion-button {
+    font-size: var(--fs-16);
+    padding: var(--space-16);
+  }
+
+  .accordion-body {
+    font-size: var(--fs-16);
+    padding: 0 var(--space-16) var(--space-16);
+  }
+
+  /* Work / Portfolio grid */
+  .work-card {
+    margin-bottom: var(--space-24);
+  }
+
+  /* Footer stacks — give each column breathing room */
+  .footer .col-lg-4,
+  .footer .col-lg-2,
+  .footer .col-lg-3 {
+    margin-bottom: var(--space-32);
+  }
+
+  .footer-bottom .row > div {
+    text-align: left !important;
+    margin-bottom: var(--space-8);
+  }
+
+  .footer-bottom ul {
+    justify-content: flex-start;
+  }
+}
+
+/* ==========================================================================
+   Small phones (<= 575.98px)
+   ========================================================================== */
+@media (max-width: 575.98px) {
+  .mobile-menu-panel {
+    width: 88vw;
+    padding: var(--space-72) var(--space-24) var(--space-24);
+  }
+
+  .header-btn {
+    gap: var(--space-8) !important;
+  }
+
+  .web-btn {
+    padding: var(--space-10) var(--space-16);
+  }
+
+  .brand-name.top {
+    right: -40px;
+  }
+
+  .services-card {
+    min-height: 180px;
+  }
+
+  .work .row.cust-gap .col-lg-4:nth-child(5),
+  .work .row.cust-gap .col-lg-4:nth-child(6) {
+    margin-top: 0;
+  }
+
+  .contact-info-card .info-row {
+    flex-wrap: wrap;
+  }
+}
+
+/* Reduced motion: keep everything visible, disable motion-only affordances */
+@media (prefers-reduced-motion: reduce) {
+  .hero-cursor-img,
+  .services-cursor-badge {
+    display: none;
+  }
+
+  .hero-type-wrap::after {
+    animation: none;
+    opacity: 1;
+  }
+
+  * {
+    scroll-behavior: auto !important;
+  }
+}
