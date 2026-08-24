@@ -47,9 +47,9 @@
                     <span class="semibold">Contact Info</span>
 
                     <ul>
-                        <li><a href="tel:+123456789">+123 456 7890</a></li>
-                        <li><a href="mailto:Contact@dexterdesignlab.com"> Contact@dexterdesignlab.com</a></li>
-                        <li><a href="javascript:;"> lorem ipsum, LI · London, UK</a></li>
+                        <!-- <li><a href="tel:+123456789">+123 456 7890</a></li> -->
+                        <li><a href="mailto:info@codewavetechnologies.net">info@codewavetechnologies.net</a></li>
+                        <li><a href="javascript:;"> House B-122, Block 13, Gulistan e Johar, Karachi.</a></li>
                     </ul>
                 </div>
             </div>

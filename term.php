@@ -51,7 +51,7 @@
                     <p>We may update these terms from time to time. Continued use of our services after changes are posted constitutes acceptance of the revised terms.</p>
 
                     <h4 class="web-title">9. Contact</h4>
-                    <p>Questions about these terms can be sent to <a href="mailto:Contact@dexterdesignlab.com">Contact@dexterdesignlab.com</a>.</p>
+                    <p>Questions about these terms can be sent to <a href="mailto:info@codewavetechnologies.net">info@codewavetechnologies.net</a>.</p>
                 </div>
             </div>
         </div>

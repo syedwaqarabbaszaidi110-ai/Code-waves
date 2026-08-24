@@ -57,15 +57,15 @@
                 <div class="contact-info-card reveal-up">
                     <div class="info-row">
                         <span class="label">Email</span>
-                        <a href="mailto:Contact@dexterdesignlab.com">Contact@dexterdesignlab.com</a>
+                        <a href="mailto:info@codewavetechnologies.net">info@codewavetechnologies.net</a>
                     </div>
-                    <div class="info-row">
+                    <!-- <div class="info-row">
                         <span class="label">Phone</span>
                         <a href="tel:+123456789">+123 456 7890</a>
-                    </div>
+                    </div> -->
                     <div class="info-row">
                         <span class="label">Studio</span>
-                        <span class="value">Lorem Ipsum, LI &middot; London, UK</span>
+                        <span class="value">House B-122, Block 13, Gulistan e Johar, Karachi.</span>
                     </div>
                     <div class="info-row">
                         <span class="label">Hours</span>

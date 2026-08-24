@@ -52,7 +52,7 @@
                     <p>We may update this policy periodically. The "last updated" date at the top of this page reflects the most recent revision.</p>
 
                     <h4 class="web-title">9. Contact</h4>
-                    <p>For any privacy-related questions, email <a href="mailto:Contact@dexterdesignlab.com">Contact@dexterdesignlab.com</a>.</p>
+                    <p>For any privacy-related questions, email <a href="mailto:info@codewavetechnologies.net">info@codewavetechnologies.net</a>.</p>
                 </div>
             </div>
         </div>
