@@ -434,7 +434,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title white reveal-up">Like what you see? Let's build yours.</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a project</a>
+                    <a href="contact-us.php" class="web-btn two">Start a project</a>
                 </div>
             </div>
         </div>

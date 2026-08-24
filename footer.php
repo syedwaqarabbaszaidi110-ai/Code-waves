@@ -21,7 +21,7 @@
                         <!-- <li><a href="testimonial.php">Testimonial</a></li>
                         <li><a href="pricing.php">Pricing</a></li>
                         <li><a href="faqs.php">FAQs</a></li> -->
-                        <li><a href="contact.php">Contact</a></li>
+                        <li><a href="contact-us.php">Contact</a></li>
                     </ul>
                 </div>
             </div>

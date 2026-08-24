@@ -11,7 +11,7 @@
                 <h4 class="web-title white">Search visibility that compounds over time.</h4>
                 <p class="white">We combine technical SEO, content strategy, and on-page optimisation to build organic visibility that keeps paying off long after the initial work is done.</p>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a project</a>
+                    <a href="contact-us.php" class="web-btn two">Start a project</a>
                 </div>
             </div>
             <!-- <div class="col-lg-5">
@@ -117,7 +117,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title reveal-up">Ready to talk about your seo project?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn">Get in touch</a>
+                    <a href="contact-us.php" class="web-btn">Get in touch</a>
                 </div>
             </div>
         </div>

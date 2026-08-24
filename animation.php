@@ -4,19 +4,14 @@
 <section class="page-banner service-hero sec-bg relative">
     <div class="container">
         <div class="row cust-gap align-items-center">
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <div class="breadcrumb-trail">
                     <a href="./">Home</a> <span>/</span> <a href="services.php">Services</a> <span>/</span> <span>Animation</span>
                 </div>
                 <h4 class="web-title white">Motion that makes a product feel alive.</h4>
                 <p class="white">From micro-interactions to full explainer videos, we design motion that guides attention and adds polish — without slowing anything down or feeling gratuitous.</p>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a project</a>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="services-img reveal-up" style="border-radius: var(--fs-12); overflow: hidden;">
-                    <img src="assets/images/software/1.webp" alt="Animation" style="width:100%; height:100%; object-fit:cover; display:block;">
+                    <a href="contact-us.php" class="web-btn two">Start a project</a>
                 </div>
             </div>
         </div>
@@ -117,7 +112,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title reveal-up">Ready to talk about your animation project?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn">Get in touch</a>
+                    <a href="contact-us.php" class="web-btn">Get in touch</a>
                 </div>
             </div>
         </div>

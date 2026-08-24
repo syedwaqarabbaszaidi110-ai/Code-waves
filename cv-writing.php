@@ -11,7 +11,7 @@
                 <h4 class="web-title white">A CV that gets you past the first filter.</h4>
                 <p class="white">We write and design resumes and portfolios that clear applicant tracking systems and actually hold a hiring manager's attention.</p>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a project</a>
+                    <a href="contact-us.php" class="web-btn two">Start a project</a>
                 </div>
             </div>
             <!-- <div class="col-lg-5">
@@ -117,7 +117,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title reveal-up">Ready to talk about your cv writing project?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn">Get in touch</a>
+                    <a href="contact-us.php" class="web-btn">Get in touch</a>
                 </div>
             </div>
         </div>

@@ -107,7 +107,7 @@
             <div class="col-lg-9">
                 <h2 class="web-title white reveal-up">Got a project worth building well?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a conversation</a>
+                    <a href="contact-us.php" class="web-btn two">Start a conversation</a>
                 </div>
             </div>
         </div>

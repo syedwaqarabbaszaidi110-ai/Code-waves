@@ -112,7 +112,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title white reveal-up">Not sure which service you need? Let's talk.</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Get in touch</a>
+                    <a href="contact-us.php" class="web-btn two">Get in touch</a>
                 </div>
             </div>
         </div>

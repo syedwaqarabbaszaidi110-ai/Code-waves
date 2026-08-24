@@ -11,14 +11,9 @@
                 <h4 class="web-title white">A mark that works everywhere, at any size.</h4>
                 <p class="white">From a favicon to a storefront sign, your logo needs to hold up. We design distinct, versatile marks tested across every real-world use case before final delivery.</p>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a project</a>
+                    <a href="contact-us.php" class="web-btn two">Start a project</a>
                 </div>
             </div>
-            <!-- <div class="col-lg-5">
-                <div class="services-img reveal-up" style="border-radius: var(--fs-12); overflow: hidden;">
-                    <img src="assets/images/branding/1.webp" alt="Logo Design" style="width:100%; height:100%; object-fit:cover; display:block;">
-                </div>
-            </div> -->
         </div>
     </div>
 </section>
@@ -117,7 +112,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title reveal-up">Ready to talk about your logo design project?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn">Get in touch</a>
+                    <a href="contact-us.php" class="web-btn">Get in touch</a>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@
                     <a href="./">Home</a> <span>/</span> <span>FAQs</span>
                 </div>
                 <h1 class="web-title white">Questions we get asked a lot.</h1>
-                <p class="white">Can't find what you're looking for? <a href="contact.php" style="color: var(--c5); text-decoration: underline;">Reach out</a> and we'll answer directly.</p>
+                <p class="white">Can't find what you're looking for? <a href="contact-us.php" style="color: var(--c5); text-decoration: underline;">Reach out</a> and we'll answer directly.</p>
             </div>
         </div>
     </div>

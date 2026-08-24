@@ -11,14 +11,9 @@
                 <h4 class="web-title white">Infrastructure you never have to think about.</h4>
                 <p class="white">Managed hosting, monitoring, and support so uptime, backups, and security patches are handled before they ever become your problem.</p>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a project</a>
+                    <a href="contact-us.php" class="web-btn two">Start a project</a>
                 </div>
             </div>
-            <!-- <div class="col-lg-5">
-                <div class="services-img reveal-up" style="border-radius: var(--fs-12); overflow: hidden;">
-                    <img src="assets/images/software/1.webp" alt="Hosting" style="width:100%; height:100%; object-fit:cover; display:block;">
-                </div>
-            </div> -->
         </div>
     </div>
 </section>
@@ -117,7 +112,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title reveal-up">Ready to talk about your hosting project?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn">Get in touch</a>
+                    <a href="contact-us.php" class="web-btn">Get in touch</a>
                 </div>
             </div>
         </div>

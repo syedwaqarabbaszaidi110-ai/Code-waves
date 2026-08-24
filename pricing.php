@@ -32,7 +32,7 @@
                         <li>2 weeks turnaround</li>
                         <li>30 days of support</li>
                     </ul>
-                    <a href="contact.php" class="web-btn two">Get started</a>
+                    <a href="contact-us.php" class="web-btn two">Get started</a>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -48,7 +48,7 @@
                         <li>4&ndash;6 weeks turnaround</li>
                         <li>90 days of support</li>
                     </ul>
-                    <a href="contact.php" class="web-btn two">Get started</a>
+                    <a href="contact-us.php" class="web-btn two">Get started</a>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -63,7 +63,7 @@
                         <li>Managed hosting available</li>
                         <li>SLA-backed support</li>
                     </ul>
-                    <a href="contact.php" class="web-btn two">Talk to us</a>
+                    <a href="contact-us.php" class="web-btn two">Talk to us</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title white reveal-up">Not sure which plan fits?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Let's figure it out together</a>
+                    <a href="contact-us.php" class="web-btn two">Let's figure it out together</a>
                 </div>
             </div>
         </div>

@@ -660,11 +660,11 @@
     var selectors = [
       ".services-head h2.web-title",
       ".services-head p",
-      ".about-content h1.web-title",
-      ".about-content.bottom h3.web-title",
       ".services-card h4.web-title",
       ".work-card h6.web-title",
-      ".talk-head h2.web-title"
+      ".talk-head h2.web-title",
+      ".legal-content h4.web-title",
+      ".legal-content > p"
     ];
 
     var targets = [];
@@ -2026,6 +2026,502 @@
 
 
 
+  /* =========================================================
+     ABOUT PAGE — headings, stat counters, value cards
+     ========================================================= */
+  function initAboutAnimations() {
+    var section = qs(".about");
+    if (!section) return;
+
+    var headings = qsa(".about-content h4.web-title", section);
+    var introParas = qsa(".about-content p", section);
+    var stats = qsa(".stat-item");
+    var values = qsa(".value-card");
+
+    /* Headings — "Small team." / "Senior output." / "No middlemen." */
+    if (headings.length) {
+      gsap.fromTo(headings, {
+        opacity: 0,
+        x: -40
+      }, {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: headings[0],
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    }
+
+    if (introParas.length) {
+      gsap.fromTo(introParas, {
+        opacity: 0,
+        y: 24
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: introParas[0],
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+    }
+
+    /* Stat items — reveal + count up from 0 to the number in .num */
+    if (stats.length) {
+      gsap.fromTo(stats, {
+        opacity: 0,
+        y: 40,
+        scale: 0.92
+      }, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "back.out(1.6)",
+        scrollTrigger: {
+          trigger: stats[0],
+          start: "top 88%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      stats.forEach(function (stat) {
+        var numEl = qs(".num", stat);
+        if (!numEl) return;
+
+        var raw = numEl.textContent.trim();
+        var match = raw.match(/([\d.]+)(.*)/);
+        if (!match) return;
+
+        var target = parseFloat(match[1]);
+        var suffix = match[2] || "";
+        var proxy = {
+          val: 0
+        };
+
+        if (reduceMotion) {
+          numEl.textContent = raw;
+          return;
+        }
+
+        numEl.textContent = "0" + suffix;
+
+        ScrollTrigger.create({
+          trigger: stat,
+          start: "top 88%",
+          once: true,
+          onEnter: function () {
+            gsap.to(proxy, {
+              val: target,
+              duration: 1.8,
+              ease: "power2.out",
+              delay: 0.15,
+              onUpdate: function () {
+                numEl.textContent = Math.floor(proxy.val) + suffix;
+              },
+              onComplete: function () {
+                numEl.textContent = raw;
+              }
+            });
+          }
+        });
+      });
+    }
+
+    /* Value cards — stagger reveal + hover/tilt (mirrors process-step) */
+    if (values.length) {
+      gsap.fromTo(values, {
+        opacity: 0,
+        y: 60,
+        scale: 0.95
+      }, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.75,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: values[0],
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      values.forEach(function (card) {
+        var num = qs(".num", card);
+        var title = qs("h4", card);
+
+        card.addEventListener("mouseenter", function () {
+          gsap.to(card, {
+            y: -10,
+            duration: 0.4,
+            ease: "power3.out"
+          });
+          if (num) gsap.to(num, {
+            scale: 1.1,
+            rotation: 8,
+            duration: 0.4,
+            ease: "back.out(1.6)"
+          });
+          if (title) gsap.to(title, {
+            x: 4,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+        card.addEventListener("mouseleave", function () {
+          gsap.to(card, {
+            y: 0,
+            duration: 0.5,
+            ease: "power3.out"
+          });
+          if (num) gsap.to(num, {
+            scale: 1,
+            rotation: 0,
+            duration: 0.45,
+            ease: "power3.out"
+          });
+          if (title) gsap.to(title, {
+            x: 0,
+            duration: 0.4,
+            ease: "power3.out"
+          });
+        });
+
+        if (isTouch) return;
+        card.addEventListener("mousemove", function (e) {
+          if (window.innerWidth < 768) return;
+          var rect = card.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          gsap.to(card, {
+            rotateX: ((y / rect.height) - 0.5) * -5,
+            rotateY: ((x / rect.width) - 0.5) * 5,
+            transformPerspective: 900,
+            duration: 0.4,
+            ease: "power2.out"
+          });
+        });
+        card.addEventListener("mouseleave", function () {
+          gsap.to(card, {
+            rotateX: 0,
+            rotateY: 0,
+            duration: 0.6,
+            ease: "power3.out"
+          });
+        });
+      });
+    }
+
+    /* Bottom CTA (About / everywhere it repeats as .talk-head too) */
+    var ctaHeading = qs(".about-content.bottom h2.web-title");
+    var ctaBtn = qs(".about-content.bottom .web-btn");
+    if (ctaHeading) {
+      gsap.fromTo(ctaHeading, {
+        opacity: 0,
+        y: 40
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ctaHeading,
+          start: "top 88%",
+          toggleActions: "play none none none"
+        }
+      });
+    }
+    if (ctaBtn) {
+      gsap.fromTo(ctaBtn, {
+        opacity: 0,
+        y: 20,
+        scale: 0.95
+      }, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        delay: 0.2,
+        ease: "back.out(1.5)",
+        scrollTrigger: {
+          trigger: ctaHeading || ctaBtn,
+          start: "top 88%",
+          toggleActions: "play none none none"
+        }
+      });
+    }
+  }
+
+  /* =========================================================
+     PAGE BANNER — breadcrumb / title / paragraph / CTA entrance,
+     runs on load (above the fold) on every inner page.
+     ========================================================= */
+  function initPageBannerAnimations() {
+    var banner = qs(".page-banner");
+    if (!banner || reduceMotion) return;
+
+    var crumb = qs(".breadcrumb-trail", banner);
+    var tag = qs(".service-tag", banner);
+    var title = qs("h1.web-title, h4.web-title", banner);
+    var para = qs("p", banner);
+    var cta = qs(".web-btn", banner);
+
+    var tl = gsap.timeline({
+      delay: 0.15
+    });
+    [crumb, tag, title, para, cta].forEach(function (el) {
+      if (!el) return;
+      tl.fromTo(el, {
+        opacity: 0,
+        y: 26
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: "power3.out"
+      }, "<0.1");
+    });
+  }
+
+  /* =========================================================
+     PORTFOLIO PAGE HEADER (our-work.php) — eyebrow / heading /
+     intro / filter tabs
+     ========================================================= */
+  function initWorkHeaderAnimations() {
+    var header = qs(".work-header");
+    if (!header) return;
+
+    var eyebrow = qs(".work-eyebrow", header);
+    var heading = qs("h2.web-title", header);
+    var intro = qs(".work-intro");
+    var filters = qsa(".work-filter");
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: header,
+        start: "top 85%",
+        toggleActions: "play none none none"
+      }
+    });
+    if (eyebrow) tl.fromTo(eyebrow, {
+      opacity: 0,
+      y: 16
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: "power2.out"
+    });
+    if (heading) tl.fromTo(heading, {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out"
+    }, "-=0.25");
+    if (intro) tl.fromTo(intro, {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: "power2.out"
+    }, "-=0.4");
+    if (filters.length) tl.fromTo(filters, {
+      opacity: 0,
+      y: 16
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.4,
+      stagger: 0.06,
+      ease: "power2.out"
+    }, "-=0.3");
+  }
+
+  /* =========================================================
+     FAQ ACCORDION — item reveal + hover lift
+     ========================================================= */
+  function initFaqAnimations() {
+    var items = qsa(".faq-accordion .accordion-item");
+    if (!items.length) return;
+
+    gsap.fromTo(items, {
+      opacity: 0,
+      y: 30
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: items[0],
+        start: "top 88%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    items.forEach(function (item) {
+      var btn = qs(".accordion-button", item);
+      if (!btn || isTouch) return;
+      btn.addEventListener("mouseenter", function () {
+        gsap.to(item, {
+          x: 4,
+          duration: 0.25,
+          ease: "power2.out"
+        });
+      });
+      btn.addEventListener("mouseleave", function () {
+        gsap.to(item, {
+          x: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+  }
+
+  /* =========================================================
+     PRICING / TESTIMONIAL / LEGAL — shared card reveal
+     ========================================================= */
+  function initMiscCardAnimations() {
+    var pricing = qsa(".pricing-card");
+    if (pricing.length) {
+      gsap.fromTo(pricing, {
+        opacity: 0,
+        y: 60,
+        scale: 0.95
+      }, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.75,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: pricing[0],
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      pricing.forEach(function (card) {
+        card.addEventListener("mouseenter", function () {
+          gsap.to(card, {
+            y: -10,
+            duration: 0.4,
+            ease: "power3.out"
+          });
+        });
+        card.addEventListener("mouseleave", function () {
+          gsap.to(card, {
+            y: 0,
+            duration: 0.5,
+            ease: "power3.out"
+          });
+        });
+      });
+    }
+
+    var testimonials = qsa(".testimonial-card");
+    if (testimonials.length) {
+      gsap.fromTo(testimonials, {
+        opacity: 0,
+        y: 50
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: testimonials[0],
+          start: "top 88%",
+          toggleActions: "play none none none"
+        }
+      });
+
+      testimonials.forEach(function (card) {
+        card.addEventListener("mouseenter", function () {
+          gsap.to(card, {
+            y: -8,
+            duration: 0.35,
+            ease: "power3.out"
+          });
+        });
+        card.addEventListener("mouseleave", function () {
+          gsap.to(card, {
+            y: 0,
+            duration: 0.45,
+            ease: "power3.out"
+          });
+        });
+      });
+    }
+  }
+
+  /* =========================================================
+     "LET'S TALK ABOUT YOUR PROJECT" — auto-scrolling label+image
+     marquee strip (reference: azuris-nextjs.vercel.app "Let's talk
+     about your project" CTA, duplicated "object" list for a
+     seamless loop). Sits alongside the existing drag/bounce pile —
+     it does not replace it.
+     ========================================================= */
+  function initTalkMarquee() {
+    var track = qs(".talk-marquee-track");
+    if (!track || reduceMotion) return;
+
+    var half = track.scrollWidth / 2;
+    if (!half) return;
+
+    var wrap = gsap.utils.wrap(-half, 0);
+
+    var tween = gsap.to(track, {
+      x: -half,
+      duration: Math.max(half / 40, 18),
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        x: function (x) {
+          return wrap(parseFloat(x)) + "px";
+        }
+      }
+    });
+
+    var marqueeWrap = qs(".talk-marquee");
+    if (marqueeWrap && !isTouch) {
+      marqueeWrap.addEventListener("mouseenter", function () {
+        gsap.to(tween, {
+          timeScale: 0.25,
+          duration: 0.4
+        });
+      });
+      marqueeWrap.addEventListener("mouseleave", function () {
+        gsap.to(tween, {
+          timeScale: 1,
+          duration: 0.6
+        });
+      });
+    }
+  }
+
+
   /* -----------------------------------------------------------------------
      Bootstrap
      ----------------------------------------------------------------------- */
@@ -2054,6 +2550,12 @@
       initFeatureAnimations();
       initProcessAnimations();
       initProcessTilt();
+      initAboutAnimations();
+      initPageBannerAnimations();
+      initWorkHeaderAnimations();
+      initFaqAnimations();
+      initMiscCardAnimations();
+      initTalkMarquee();
     });
   }
 

@@ -51,13 +51,13 @@
                                 <li><a href="about-us.php" class="ddl-nav-link"><span>About Us</span></a></li>
                                 <li><a href="services.php" class="ddl-nav-link"><span>Services</span></a></li>
                                 <li><a href="our-work.php" class="ddl-nav-link"><span>Portfolio</span></a></li>
-                                <li><a href="contact.php" class="ddl-nav-link"><span>Contact Us</span></a></li>
+                                <li><a href="contact-us.php" class="ddl-nav-link"><span>Contact Us</span></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6 col-6">
                         <div class="header-btn text-end d-flex align-items-center justify-content-end gap-3">
-                            <a href="contact.php" class="web-btn two ">
+                            <a href="contact-us.php" class="web-btn two ">
                                 Contact us
                             </a>
                             <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
@@ -79,7 +79,7 @@
                     <li><a href="about-us.php">About Us</a></li>
                     <li><a href="services.php">Services</a></li>
                     <li><a href="our-work.php">Portfolio</a></li>
-                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="contact-us.php">Contact Us</a></li>
                 </ul>
             </div>
         </div>

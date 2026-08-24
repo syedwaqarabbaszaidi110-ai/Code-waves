@@ -424,8 +424,66 @@
             <span>Brand Identity</span>
             <span>Interaction Design</span>
             <span>Packaging</span>
-            
+
         </div>
+
+        <!-- Auto-scrolling label + image strip, same idea as the reference
+             site's "Let's talk about your project" CTA: a duplicated
+             ("permanent") set of items so the marquee loops seamlessly. -->
+        <div class="talk-marquee">
+            <div class="talk-marquee-track">
+                <div class="talk-marquee-item">
+                    <span class="talk-marquee-label">Website Design</span>
+                    <span class="talk-marquee-img"><img src="assets/images/website/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item">
+                    <span class="talk-marquee-label">UI/UX Design</span>
+                    <span class="talk-marquee-img"><img src="assets/images/ui/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item">
+                    <span class="talk-marquee-label">Mobile App</span>
+                    <span class="talk-marquee-img"><img src="assets/images/mobile-app/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item">
+                    <span class="talk-marquee-label">Software Dev</span>
+                    <span class="talk-marquee-img"><img src="assets/images/software/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item">
+                    <span class="talk-marquee-label">AI Development</span>
+                    <span class="talk-marquee-img"><img src="assets/images/ai/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item">
+                    <span class="talk-marquee-label">Branding</span>
+                    <span class="talk-marquee-img"><img src="assets/images/branding/1.webp" alt=""></span>
+                </div>
+                <!-- duplicate (permanent) set — keeps the loop seamless -->
+                <div class="talk-marquee-item" aria-hidden="true">
+                    <span class="talk-marquee-label">Website Design</span>
+                    <span class="talk-marquee-img"><img src="assets/images/website/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item" aria-hidden="true">
+                    <span class="talk-marquee-label">UI/UX Design</span>
+                    <span class="talk-marquee-img"><img src="assets/images/ui/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item" aria-hidden="true">
+                    <span class="talk-marquee-label">Mobile App</span>
+                    <span class="talk-marquee-img"><img src="assets/images/mobile-app/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item" aria-hidden="true">
+                    <span class="talk-marquee-label">Software Dev</span>
+                    <span class="talk-marquee-img"><img src="assets/images/software/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item" aria-hidden="true">
+                    <span class="talk-marquee-label">AI Development</span>
+                    <span class="talk-marquee-img"><img src="assets/images/ai/1.webp" alt=""></span>
+                </div>
+                <div class="talk-marquee-item" aria-hidden="true">
+                    <span class="talk-marquee-label">Branding</span>
+                    <span class="talk-marquee-img"><img src="assets/images/branding/1.webp" alt=""></span>
+                </div>
+            </div>
+        </div>
+
         <div class="row justify-content-center py-200 pt-0">
             <div class="col-lg-7">
                 <div class="talk-head text-center">

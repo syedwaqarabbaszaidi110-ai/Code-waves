@@ -11,7 +11,7 @@
                 <h4 class="web-title white">Websites built to load fast and hold up.</h4>
                 <p class="white">We build custom websites and web applications on clean, modern code — no bloated page builders, no fragile plugin stacks. Just fast, maintainable software that your team can actually build on top of later.</p>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a project</a>
+                    <a href="contact-us.php" class="web-btn two">Start a project</a>
                 </div>
             </div>
             <!-- <div class="col-lg-5">
@@ -117,7 +117,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title reveal-up">Ready to talk about your web development project?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn">Get in touch</a>
+                    <a href="contact-us.php" class="web-btn">Get in touch</a>
                 </div>
             </div>
         </div>

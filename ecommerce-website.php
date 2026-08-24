@@ -11,7 +11,7 @@
                 <h4 class="web-title white">Storefronts built to convert, not just display.</h4>
                 <p class="white">We design and build ecommerce experiences on Shopify, WooCommerce, or custom stacks — from product discovery to a checkout flow that doesn't lose sales at the last step.</p>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn two">Start a project</a>
+                    <a href="contact-us.php" class="web-btn two">Start a project</a>
                 </div>
             </div>
             <!-- <div class="col-lg-3">
@@ -117,7 +117,7 @@
             <div class="col-lg-12">
                 <h2 class="web-title reveal-up">Ready to talk about your ecommerce website project?</h2>
                 <div class="py-30">
-                    <a href="contact.php" class="web-btn">Get in touch</a>
+                    <a href="contact-us.php" class="web-btn">Get in touch</a>
                 </div>
             </div>
         </div>
